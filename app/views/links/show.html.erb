@@ -20,6 +20,25 @@
 		<br>
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-header">
+		<h4>Comments</h4>
+	</div>
+	<% @link.comments.each do |comment| %>
+	<div class="panel-body">
+		<p><strong><%= link_to comment.user.username, user_posts_path(id: comment.user.id) %></strong> said:</p> 
+		<p><%= comment.comment_entry %></p>
+		<p>submitted <%= comment.created_at.strftime('%m/%d/%Y at %I:%M%p') %></p>
+	</div>
+	<% if current_user.id == @link.user.id %>
+	<div class="panel-footer">
+	  <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-warning" %>
+	  <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+	</div>
+	<% end %>
+<% end %>
+</div>
+
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
 
