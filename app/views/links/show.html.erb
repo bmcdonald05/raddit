@@ -10,5 +10,16 @@
   <%= @link.url %>
 </p>
 
+<div class="panel panel-default">
+		<div class="panel-heading">
+			Make a Comment
+		</div>
+		<div class"panel-body">
+			<%= render 'comments/form' %>
+		</div>
+		<br>
+</div>
+
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
+
