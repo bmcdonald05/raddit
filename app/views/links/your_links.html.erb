@@ -1,0 +1,23 @@
+
+
+<div class="row">
+  <% current_user.links.each do |links| %>
+    <div class="col-md-12">
+      <div class="panel panel-success">
+        <div class="panel panel-heading">
+          <%= link_to link.title, link %>
+        </div>
+
+        <div class="panel panel-body">
+          <p>submitted <%= link.created_at.strftime('%m/%d/%Y at %I:%M%p') %></p>
+        </div>
+        <% if current_user.id == link.user.id %>
+          <div class="panel-footer">
+            <%= link_to 'Edit', edit_link_path(link), class: "btn btn-warning" %>
+            <%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

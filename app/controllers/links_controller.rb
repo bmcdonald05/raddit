@@ -24,6 +24,14 @@ class LinksController < ApplicationController
     @links = Link.all
   end
 
+  def user_links
+    @user = User.find(params[:id])
+  end
+
+  def your_links
+    
+  end
+
   # POST /links
   # POST /links.json
   def create

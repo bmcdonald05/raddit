@@ -26,7 +26,7 @@
 	</div>
 	<% @link.comments.each do |comment| %>
 	<div class="panel-body">
-		<p><strong><%= link_to comment.user.username, user_posts_path(id: comment.user.id) %></strong> said:</p> 
+		<p><strong><%= link_to comment.user.username, user_links_path(id: comment.user.id) %></strong> said:</p> 
 		<p><%= comment.comment_entry %></p>
 		<p>submitted <%= comment.created_at.strftime('%m/%d/%Y at %I:%M%p') %></p>
 	</div>
