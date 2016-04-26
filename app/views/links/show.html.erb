@@ -11,13 +11,13 @@
 </p>
 
 <div class="panel panel-default">
-		<div class="panel-heading">
-			Make a Comment
-		</div>
-		<div class"panel-body">
-			<%= render 'comments/form' %>
-		</div>
-		<br>
+	<div class="panel-heading">
+		Make a Comment
+	</div>
+	<div class"panel-body">
+		<%= render 'comments/form' %>
+	</div>
+	<br>
 </div>
 
 <div class="panel panel-default">
@@ -32,8 +32,8 @@
 	</div>
 	<% if current_user.id == @link.user.id %>
 	<div class="panel-footer">
-	  <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-warning" %>
-	  <%= link_to 'Destroy', @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+	  <%= link_to 'Edit', edit_comment_path(comment), class: "btn btn-warning" %>
+	  <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 	</div>
 	<% end %>
 <% end %>
